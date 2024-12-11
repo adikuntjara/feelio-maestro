@@ -1,0 +1,36 @@
+appId: com.itsbgold.feelio
+---
+
+# Enter a valid Nickname and Submit
+- launchApp
+- assertVisible: "Enter a nickname"
+- assertVisible: "You can only change this one time!" 
+- tapOn: "Enter your nickname"
+- inputText: "adikuntjara"
+- tapOn: "Proceed"
+
+# Input Initial PIN (PIN: 1234)
+- assertVisible: "Create a 4-digit PIN for Feelio:"
+- tapOn: "1"
+- tapOn: "2"
+- tapOn: "3"
+- tapOn: "4"
+
+# Input Wrong PIN Confirmation (PIN: 1234)
+- assertVisible: "Enter your 4-digit Feelio PIN:"
+- tapOn: "1"
+- tapOn: "1"
+- tapOn: "1"
+- tapOn: "1"
+- assertVisible: "Failure"
+- assertVisible: "Invalid PIN. Try again."
+- tapOn: "OK"
+
+# Input Correct PIN Confirmation (PIN: 1234)
+- assertVisible: "Enter your 4-digit Feelio PIN:"
+- tapOn: "1"
+- tapOn: "2"
+- tapOn: "3"
+- tapOn: "4"
+- assertVisible: "adikuntjara"
+- stopApp

@@ -1,0 +1,24 @@
+# Task 1
+
+appId: com.itsbgold.feelio
+---
+
+# Input Correct PIN (Correct PIN: 1234)
+- launchApp
+- assertVisible: "Enter your 4-digit Feelio PIN:"
+- tapOn: "1"
+- tapOn: "2"
+- tapOn: "3"
+- tapOn: "4"
+- assertVisible: "adikuntjara"
+- stopApp
+
+# Input Incorrect PIN (Correct PIN: 1234)
+- launchApp
+- assertVisible: "Enter your 4-digit Feelio PIN:"
+- tapOn: "1"
+- tapOn: "1"
+- tapOn: "1"
+- tapOn: "1"
+- assertVisible: "Invalid PIN. Try again."
+- stopApp

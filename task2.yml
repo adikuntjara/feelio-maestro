@@ -1,0 +1,37 @@
+# Task 1
+
+appId: com.itsbgold.feelio
+---
+
+# Create a New Diary then Assert it
+- launchApp
+- assertVisible: "Enter your 4-digit Feelio PIN:"
+- tapOn: "1"
+- tapOn: "2"
+- tapOn: "3"
+- tapOn: "4"
+- assertVisible: "adikuntjara"
+- takeScreenshot:
+    path: beforeSubmission
+- tapOn:
+    text: ""
+    index: 1
+- assertVisible: "New Diary"
+- tapOn: "Enter your title"
+- inputText: "How have you been?"
+- tapOn: "How are you feeling?"
+- inputText: "I am good, thank you"
+- hideKeyboard
+- tapOn: "Save"
+- assertVisible: "How have you been?"
+- takeScreenshot:
+    path: afterSubmission
+
+# Delete the Diary after executing automation test to maintain clean test environment
+- tapOn: "How have you been?"
+- tapOn: ""
+- assertVisible: "Delete Diary"
+- assertVisible: "Are you sure you want to delete?"
+- tapOn: "YES"
+- assertNotVisible: "How have you been?"
+- stopApp
