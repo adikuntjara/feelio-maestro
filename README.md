@@ -7,6 +7,7 @@
 -   Install Maestro
 -   Install Java JDK
 -   Install Android Studio
+-   Install apk from this github repository: https://github.com/baqx/feelio/
 
   ## How to Getting Started:
 
